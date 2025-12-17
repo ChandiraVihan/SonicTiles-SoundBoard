@@ -1,6 +1,8 @@
+import React, { useState } from "react"
 import pads from "./pads"
+import "./App.css"
 
-export default function App() {
+function App() {
     /**
      * Challenge part 1:
      * 1. Initialize state with the default value of the
@@ -10,11 +12,20 @@ export default function App() {
      *    (Don't worry about using the "on" or "color" 
      *    properties yet)
      */
+
+    const [padArray, setPadArray] = useState(pads)
     return (
-        <main>
+        <>
+          <h1> SonicTiles</h1>
+          <main>
             <div className="pad-container">
-                {/* <button>s go here */}
+                {padArray.map(pad => (
+                    <button key={pad.id}></button>
+                ))}
             </div>
         </main>
+        </>
     )
 }
+
+export default App;
