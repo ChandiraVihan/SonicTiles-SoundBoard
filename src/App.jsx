@@ -8,8 +8,8 @@ function App() {
     const [padArray, setPadArray] = useState(pads)
 
 
-    const buttonElements = padArray.map (pad => (
-        <Pad key = {pad.id}>  </Pad>))
+    const buttonElements = padArray.map (pads => (
+        <Pad key = {pads.id}/>))
 
     return (
         <>
