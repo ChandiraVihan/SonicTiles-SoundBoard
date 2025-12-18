@@ -1,9 +1,9 @@
 import "./App.css"
 
-function Pad() {
+function Pad(props) {
     return (
- <button></button>
+ <button style={{ backgroundColor: props.color }}></button>
     )
 }
 
-export default Pad;
+export default Pad; 

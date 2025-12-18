@@ -9,7 +9,7 @@ function App() {
 
 
     const buttonElements = padArray.map (pads => (
-        <Pad key = {pads.id}/>))
+        <Pad key = {pads.id} color={pads.color} />))
 
     return (
         <>
