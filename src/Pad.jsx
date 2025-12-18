@@ -1,9 +1,19 @@
+import { useState } from "react"
 import "./App.css"
 
 function Pad(props) {
+
+    const [isOn, setIsOn] = useState(props.on);
+    const [isPlayed,setIsPlayed] = useState(false);
+
+    function toggle() {
+        setIsOn(prevIsOn => !prevIsOn);
+    }
+
     return (
  <button style={{ backgroundColor: props.color }}
- className ={props.on ? "on" : ""}
+    className ={isOn ? "on" : ""} 
+    onClick={toggle}
  ></button>
     )
 }
