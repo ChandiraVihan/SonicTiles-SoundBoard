@@ -1,5 +1,6 @@
 import React, { useState } from "react"
 import pads from "./pads"
+import Pad from "./Pad.jsx"
 import "./App.css"
 
 function App() {
@@ -7,12 +8,8 @@ function App() {
     const [padArray, setPadArray] = useState(pads)
 
 
-    const style = {
-        backgroundColor: "lightblue"}
-
     const buttonElements = padArray.map (pad => (
-        <button style = {style}                     //inline styling example
-            key={pad.id} >  </button>))
+        <Pad key = {pad.id}>  </Pad>))
 
     return (
         <>
