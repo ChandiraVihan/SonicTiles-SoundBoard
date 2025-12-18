@@ -15,10 +15,20 @@ function App() {
     // }
 
     function toggle(id) {
+
+    // 1. Find the pad that was clicked to get its specific sound
+    const clickedPad = padArray.find(pad => pad.id === id)
+    
+    // 2. Play that specific sound
+    if (clickedPad && clickedPad.sound) {
+        const audio = new Audio(clickedPad.sound)
+        audio.play()
+    }
+
     setPadArray(prevPads => prevPads.map(item => {
         // If it's the item we clicked, set 'on' to true (or !item.on if you want to be able to turn it back off)
         // If it's NOT the item we clicked, set 'on' to false
-        return item.id === id ? { ...item, on: !item.on } : { ...item, on: false }
+        return item.id === id ? { ...item, on: true } : { ...item, on: false }
     }))
 }
 
