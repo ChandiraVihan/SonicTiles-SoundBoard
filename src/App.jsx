@@ -8,8 +8,15 @@ function App() {
     const [padArray, setPadArray] = useState(pads)
 
 
+    function toggle(id) {
+        setPadArray(prevPads => prevPads.map(item => {
+          return item.id === id ? {...item, on : !item.on} : item
+        }))
+    }
+
+
     const buttonElements = padArray.map (pads => (
-        <Pad key = {pads.id} color={pads.color} on={pads.on} />))
+        <Pad toggle = {toggle} id={pads.id} key = {pads.id} color={pads.color} on={pads.on} />))
 
     return (
         <>
