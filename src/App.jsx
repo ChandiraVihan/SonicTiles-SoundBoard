@@ -8,11 +8,19 @@ function App() {
     const [padArray, setPadArray] = useState(pads)
 
 
+    // function toggle(id) {
+    //     setPadArray(prevPads => prevPads.map(item => {
+    //       return item.id === id ? {...item, on : !item.on} : item   //this function flips the sdate of only the clicked pad
+    //     }))
+    // }
+
     function toggle(id) {
-        setPadArray(prevPads => prevPads.map(item => {
-          return item.id === id ? {...item, on : !item.on} : item
-        }))
-    }
+    setPadArray(prevPads => prevPads.map(item => {
+        // If it's the item we clicked, set 'on' to true (or !item.on if you want to be able to turn it back off)
+        // If it's NOT the item we clicked, set 'on' to false
+        return item.id === id ? { ...item, on: !item.on } : { ...item, on: false }
+    }))
+}
 
 
     const buttonElements = padArray.map (pads => (
