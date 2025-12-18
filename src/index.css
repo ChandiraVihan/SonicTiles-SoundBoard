@@ -13,7 +13,7 @@ main {
 }
 
 .pad-container {
-    margin-top: 10%;
+    margin-top: 8%;
     display: grid;
     grid-template-columns: repeat(4, 124px);
     grid-template-rows: repeat(2, 124px);
